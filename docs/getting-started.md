@@ -124,7 +124,7 @@ cd $Env:ProgramFiles\containerd\
 .\containerd.exe config default | Out-File config.toml -Encoding ascii
 
 # Copy
-Copy-Item -Path .\bin\* -Destination (New-Item -Type Directory $Env:ProgramFiles\containerd -Force) -Recurse -Force
+Copy-Item -Path .\bin\* -Destination (New-Item -Type Directory $Env:ProgramFiles\containerd\bin -Force) -Recurse -Force
 
 # add the binaries (containerd.exe, ctr.exe) in $env:Path
 $Path = [Environment]::GetEnvironmentVariable("PATH", "Machine") + [IO.Path]::PathSeparator + "$Env:ProgramFiles\containerd"
